@@ -499,7 +499,7 @@ being wrong, and they're the ones that changed the code.
 
 ## 4. Design decisions log
 
-### The five decisions that shaped the build
+### The six decisions that shaped the build
 
 1. **The LLM solves first, blind.** The solver never sees the answer key, the stored solution or
    the student's comment. The comparison in stage 3 is only worth something if the solve was not
@@ -523,6 +523,16 @@ being wrong, and they're the ones that changed the code.
    rendered correctly, the AI's verdict with evidence, the before/after diff, and
    approve/reject/edit. That is the whole screen. Simple and testable beats decorated and
    confusing for a demo.
+6. **Group the reports before anyone reviews them.** The same broken question arrives as
+   separate reports from separate students, and reviewing each one is wasted work. So the
+   pipeline groups every report by `questionId` first, then clusters the comments inside a
+   group by theme (`answer`, `missing_data`, `blank_option`, `spelling`, `other`) and collapses
+   an identical complaint into one cluster carrying its count. Three students saying the answer
+   is wrong become one case that reads "3 reports from 3 students" — faculty review it once,
+   and one approval sends the reply to all three. Groups are then ordered by urgency (report
+   count + distinct students + a weight for the complaint theme), so the question the most
+   students are shouting about sits at the top of the queue. In the current export, 45 reports
+   collapse to 39 question-level cases and 40 comment clusters, four of them repeats.
 
 ### What I tried, what I dropped, and why
 
