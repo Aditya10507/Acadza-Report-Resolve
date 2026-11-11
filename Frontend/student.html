@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Acadza · Practice</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath d='M8 21l5-10 3 6 2-3.5L24 21z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="student.css" />
+</head>
+<body>
+  <header class="topbar student-topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M8 21l5-10 3 6 2-3.5L24 21z" fill="#fff"/></svg>
+      </span>
+      <div class="brand-text">
+        <strong>Acadza</strong>
+        <span>Student practice</span>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="btn ghost" id="myQueriesBtn" type="button">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        My queries <span class="chip" id="myQueriesCount" hidden></span>
+      </button>
+      <span class="reviewer-chip" id="whoChip">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <span id="whoName">…</span>
+      </span>
+      <button class="btn ghost" id="logoutBtn" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main class="student-layout">
+    <aside class="student-side">
+      <div class="queue-head">
+        <div class="queue-title">
+          <h1>Practice</h1>
+          <span id="questionCount"></span>
+        </div>
+        <div class="subject-filters" id="subjectFilters" role="group" aria-label="Subject filter"></div>
+        <input id="search" type="search" placeholder="Search questions…" autocomplete="off" spellcheck="false" />
+      </div>
+      <div class="queue-scroll" id="questionList" aria-label="Practice questions"></div>
+    </aside>
+
+    <section class="student-main" id="practicePanel">
+      <div class="detail-loading" id="practiceLoading">
+        <div class="spinner"></div>
+        <p>Loading practice questions…</p>
+      </div>
+    </section>
+
+    <section class="student-main hidden" id="queriesPanel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <h2>My queries</h2>
+          <button class="btn ghost" id="queriesClose" type="button">Back to practice</button>
+        </div>
+        <p class="panel-note">Every query is checked by the AI first. Genuine issues reach the faculty queue; for the rest, you get a reply explaining what the check found.</p>
+        <div id="queriesList" class="queries-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- report dialog -->
+  <dialog class="panel-dialog" id="reportDialog">
+    <div class="dialog-head">
+      <h2>Report this question</h2>
+      <button class="btn ghost icon-btn" id="reportClose" aria-label="Close">✕</button>
+    </div>
+    <div class="confirm-body">
+      <p class="panel-note" id="reportQuestionRef"></p>
+      <label for="reportComment">What is wrong with it?</label>
+      <textarea id="reportComment" rows="4" placeholder="e.g. the answer key looks wrong, I solved it and got (B)…"></textarea>
+    </div>
+    <div class="dialog-foot">
+      <button class="btn ghost" id="reportCancel" type="button">Cancel</button>
+      <button class="btn primary" id="reportSend" type="button">Send query</button>
+    </div>
+  </dialog>
+
+  <div class="toast-region" id="toasts" aria-live="polite"></div>
+
+  <script src="student.js"></script>
+</body>
+</html>

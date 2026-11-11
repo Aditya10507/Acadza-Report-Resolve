@@ -1,0 +1,1383 @@
+{
+ "generatedAt": "2026-11-11T11:20:51+00:00",
+ "summary": {
+  "reportedQuestions": 39,
+  "reports": 45,
+  "byVerdict": {
+   "defect": 21,
+   "no_error": 10,
+   "app_issue": 2,
+   "display_issue": 2,
+   "not_actionable": 2,
+   "already_fixed": 1,
+   "language_mode": 1
+  },
+  "byRepair": {
+   "answer_key": 3,
+   "stem_data": 2,
+   "option_repair": 2,
+   "solution_fix": 2,
+   "spelling": 2,
+   "wrong_chapter": 2,
+   "unsound": 1,
+   "type_mismatch": 1,
+   "identical_options": 1,
+   "diagram": 1,
+   "syllabus": 1,
+   "markup_leak": 1,
+   "exam_reference": 1,
+   "answer_form": 1
+  },
+  "byRoute": {
+   "no_change": 18,
+   "auto_apply": 14,
+   "faculty_review": 7
+  }
+ },
+ "questions": [
+  {
+   "questionId": "60f744b3f1b9bc7cc7b4a949",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "confidence": 0.95,
+   "evidence": "Independent solve: A (conf 0.97). Key: C. The stored solution supports the independent solve, not the key.",
+   "compare": {
+    "solve": "A",
+    "solveConfidence": 0.97,
+    "key": "C",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Alternating Current and EM Waves",
+   "questionType": "scq",
+   "reportIds": [
+    "R002",
+    "R003",
+    "R001"
+   ],
+   "themes": {
+    "answer": 3
+   },
+   "reportCount": 3
+  },
+  {
+   "questionId": "617fa18efd53ff1629ed890f",
+   "verdict": "defect",
+   "repair": "exam_reference",
+   "route": "auto_apply",
+   "confidence": 0.95,
+   "evidence": "Independent solve: D (conf 0.98). Key: D. Stem contains an exam-name source tag.",
+   "compare": {
+    "solve": "D",
+    "solveConfidence": 0.98,
+    "key": "D",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Botany",
+   "chapter": "Morphology of Flowering Plants",
+   "questionType": "scq",
+   "reportIds": [
+    "R013"
+   ],
+   "themes": {
+    "exam_ref": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "61dffbec08489156b684bd22",
+   "verdict": "defect",
+   "repair": "spelling",
+   "route": "auto_apply",
+   "confidence": 0.95,
+   "evidence": "Independent solve: A (conf 0.98). Key: A. Spelling/grammar complaint; content otherwise correct.",
+   "compare": {
+    "solve": "A",
+    "solveConfidence": 0.98,
+    "key": "A",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Zoology",
+   "chapter": "Structural Organisation in Animals",
+   "questionType": "scq",
+   "reportIds": [
+    "R012"
+   ],
+   "themes": {
+    "spelling": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "61ee6c9d90a1a968a168686b",
+   "verdict": "defect",
+   "repair": "spelling",
+   "route": "auto_apply",
+   "confidence": 0.95,
+   "evidence": "Independent solve: B (conf 0.99). Key: B. Spelling/grammar complaint; content otherwise correct.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.99,
+    "key": "B",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Zoology",
+   "chapter": "Digestion and Absorption",
+   "questionType": "scq",
+   "reportIds": [
+    "R022"
+   ],
+   "themes": {
+    "spelling": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "63765a28f1d8416ae0408d89",
+   "verdict": "defect",
+   "repair": "markup_leak",
+   "route": "auto_apply",
+   "confidence": 0.95,
+   "evidence": "Independent solve: C (conf 0.98). Key: C. Raw LaTeX is visible in the stem.",
+   "compare": {
+    "solve": "C",
+    "solveConfidence": 0.98,
+    "key": "C",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Nuclear physics and radioactivity",
+   "questionType": "scq",
+   "reportIds": [
+    "R014"
+   ],
+   "themes": {
+    "latex": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68dea616d0cda73d07e93ae6",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "confidence": 0.95,
+   "evidence": "Independent solve: 1 (conf 0.96). Key: 2. The stored solution supports the independent solve, not the key.",
+   "compare": {
+    "solve": "1",
+    "solveConfidence": 0.96,
+    "key": "2",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Electrostatics",
+   "questionType": "integerQuestion",
+   "reportIds": [
+    "R005"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68e870ef42c06737d6e565c4",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "confidence": 0.95,
+   "evidence": "Independent solve: D (conf 0.99). Key: A. The stored solution supports the independent solve, not the key.",
+   "compare": {
+    "solve": "D",
+    "solveConfidence": 0.99,
+    "key": "A",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Kinetic theory of gases",
+   "questionType": "scq",
+   "reportIds": [
+    "R004"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "6062ec84518e9535e120c422",
+   "verdict": "not_actionable",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: A (conf 0.96). Key: A. Comment is not a content report (garbage or instruction-like); treated as data and ignored.",
+   "compare": {
+    "solve": "A",
+    "solveConfidence": 0.96,
+    "key": "A",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Temperature and thermal properties of matter",
+   "questionType": "scq",
+   "reportIds": [
+    "R027"
+   ],
+   "themes": {
+    "injection": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "6208e298fa399567e0878700",
+   "verdict": "not_actionable",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: A (conf 0.95). Key: A. Comment is not a content report (garbage or instruction-like); treated as data and ignored.",
+   "compare": {
+    "solve": "A",
+    "solveConfidence": 0.95,
+    "key": "A",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Botany",
+   "chapter": "Photosynthesis in Higher Plants",
+   "questionType": "scq",
+   "reportIds": [
+    "R041"
+   ],
+   "themes": {
+    "garbage": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "6208e80a9cb2ab67dac61bd0",
+   "verdict": "already_fixed",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: C (conf 0.95). Key: C. errorHistory shows a faculty correction after the report date.",
+   "compare": {
+    "solve": "C",
+    "solveConfidence": 0.95,
+    "key": "C",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Botany",
+   "chapter": "Photosynthesis in Higher Plants",
+   "questionType": "scq",
+   "reportIds": [
+    "R045",
+    "R017"
+   ],
+   "themes": {
+    "answer": 1,
+    "spelling": 1
+   },
+   "reportCount": 2
+  },
+  {
+   "questionId": "6264197209f4fd65f58f5707",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: C (conf 0.96). Key: C. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "C",
+    "solveConfidence": 0.96,
+    "key": "C",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Zoology",
+   "chapter": "Biotechnology and its Applications",
+   "questionType": "scq",
+   "reportIds": [
+    "R040"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "636283dbe3770c24f866e6d6",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: B (conf 0.96). Key: B. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.96,
+    "key": "B",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Electrostatics",
+   "questionType": "scq",
+   "reportIds": [
+    "R043"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "66fe9dbe22132e5a70a3e579",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: D (conf 0.97). Key: D. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "D",
+    "solveConfidence": 0.97,
+    "key": "D",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Zoology",
+   "chapter": "Chemical Coordination and Integration",
+   "questionType": "scq",
+   "reportIds": [
+    "R035"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68c801bc1b1dbc16dc93bf2b",
+   "verdict": "language_mode",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: A (conf 0.96). Key: A. Request for another language.",
+   "compare": {
+    "solve": "A",
+    "solveConfidence": 0.96,
+    "key": "A",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Photoelectric effect and matter waves",
+   "questionType": "scq",
+   "reportIds": [
+    "R039"
+   ],
+   "themes": {
+    "language": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68dea577d0cda73d07e9391c",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: 14 (conf 0.97). Key: 14. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "14",
+    "solveConfidence": 0.97,
+    "key": "14",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Electrostatics",
+   "questionType": "integerQuestion",
+   "reportIds": [
+    "R044"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68dea619d0cda73d07e93aee",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: 4 (conf 0.97). Key: 4. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "4",
+    "solveConfidence": 0.97,
+    "key": "4",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Rotational Motion",
+   "questionType": "integerQuestion",
+   "reportIds": [
+    "R031"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68dea715387eea3d0d95f790",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: 3113 (conf 0.97). Key: 3113. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "3113",
+    "solveConfidence": 0.97,
+    "key": "3113",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Units and dimensions",
+   "questionType": "integerQuestion",
+   "reportIds": [
+    "R033"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68dea7c2387eea3d0d95f9bb",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: 8 (conf 0.96). Key: 8. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "8",
+    "solveConfidence": 0.96,
+    "key": "8",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Wave optics",
+   "questionType": "integerQuestion",
+   "reportIds": [
+    "R032"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68e8734442c06737d6e56da4",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: A (conf 0.97). Key: A. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "A",
+    "solveConfidence": 0.97,
+    "key": "A",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Newton's law of motion",
+   "questionType": "scq",
+   "reportIds": [
+    "R029"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68f21caf941cda588bc04365",
+   "verdict": "defect",
+   "repair": "type_mismatch",
+   "route": "auto_apply",
+   "confidence": 0.9,
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Multiple-correct type but only one correct option stored.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.97,
+    "key": "B",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Mathematics in physics",
+   "questionType": "mcq",
+   "reportIds": [
+    "R021"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "6956d79788d7701e5617bc29",
+   "verdict": "defect",
+   "repair": "identical_options",
+   "route": "faculty_review",
+   "confidence": 0.9,
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Two options have identical text.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.97,
+    "key": "B",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "AC Circuits",
+   "questionType": "scq",
+   "reportIds": [
+    "R015"
+   ],
+   "themes": {
+    "duplicate_option": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "6956d7bb23cb221e570d6013",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.97,
+    "key": "B",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Motion in a Plane",
+   "questionType": "scq",
+   "reportIds": [
+    "R028"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "6956d7e988d7701e5617bd3e",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9,
+   "evidence": "Independent solve: D (conf 0.97). Key: D. Independent solve matches the key; the student misread or mis-solved.",
+   "compare": {
+    "solve": "D",
+    "solveConfidence": 0.97,
+    "key": "D",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Oscillations",
+   "questionType": "scq",
+   "reportIds": [
+    "R030"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "60ca4feb6420652745f55522",
+   "verdict": "display_issue",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.85,
+   "evidence": "Independent solve: C (conf 0.97). Key: C. Complaint describes rendering/load.",
+   "compare": {
+    "solve": "C",
+    "solveConfidence": 0.97,
+    "key": "C",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Electrostatics",
+   "questionType": "scq",
+   "reportIds": [
+    "R036"
+   ],
+   "themes": {
+    "display": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "612151a6a34397610a9a2e58",
+   "verdict": "defect",
+   "repair": "solution_fix",
+   "route": "auto_apply",
+   "confidence": 0.85,
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Solve agrees with the key, but the student reports the solution is wrong or from another question.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.97,
+    "key": "B",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Photoelectric effect and matter waves",
+   "questionType": "scq",
+   "reportIds": [
+    "R018",
+    "R019"
+   ],
+   "themes": {
+    "solution": 2
+   },
+   "reportCount": 2
+  },
+  {
+   "questionId": "622df25ab70e4b50e44ff837",
+   "verdict": "defect",
+   "repair": "diagram",
+   "route": "faculty_review",
+   "confidence": 0.85,
+   "evidence": "Independent solve: B (conf 0.96). Key: B. Student reports a missing figure.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.96,
+    "key": "B",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Properties of matter and fluid mechanics",
+   "questionType": "scq",
+   "reportIds": [
+    "R025"
+   ],
+   "themes": {
+    "diagram": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "6263d75bdd44e265ef926d97",
+   "verdict": "defect",
+   "repair": "solution_fix",
+   "route": "auto_apply",
+   "confidence": 0.85,
+   "evidence": "Independent solve: 20 (conf 0.97). Key: 20. Solve agrees with the key, but the student reports the solution is wrong or from another question.",
+   "compare": {
+    "solve": "20",
+    "solveConfidence": 0.97,
+    "key": "20",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Properties of matter and fluid mechanics",
+   "questionType": "integerQuestion",
+   "reportIds": [
+    "R016"
+   ],
+   "themes": {
+    "solution": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "63c7cce12981ed154ee92c94",
+   "verdict": "defect",
+   "repair": "wrong_chapter",
+   "route": "faculty_review",
+   "confidence": 0.85,
+   "evidence": "Independent solve: C (conf 0.97). Key: C. Student reports the chapter/subject is wrong.",
+   "compare": {
+    "solve": "C",
+    "solveConfidence": 0.97,
+    "key": "C",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Geometrical optics and optical instruments",
+   "questionType": "scq",
+   "reportIds": [
+    "R042"
+   ],
+   "themes": {
+    "chapter": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68c8153cfb6b2f16e2d3ceaf",
+   "verdict": "app_issue",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.85,
+   "evidence": "Independent solve: A,B,D (conf 0.97). Key: A, B, D. Complaint describes app behaviour.",
+   "compare": {
+    "solve": "A,B,D",
+    "solveConfidence": 0.97,
+    "key": "A, B, D",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Electrostatics",
+   "questionType": "mcq",
+   "reportIds": [
+    "R020"
+   ],
+   "themes": {
+    "app": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68c9ae5afb6b2f16e2d43b1c",
+   "verdict": "display_issue",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.85,
+   "evidence": "Independent solve: D (conf 0.97). Key: D. Complaint describes rendering/load.",
+   "compare": {
+    "solve": "D",
+    "solveConfidence": 0.97,
+    "key": "D",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Photoelectric effect and matter waves",
+   "questionType": "scq",
+   "reportIds": [
+    "R037"
+   ],
+   "themes": {
+    "display": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68e872546e45ba37dcc16bc0",
+   "verdict": "defect",
+   "repair": "option_repair",
+   "route": "auto_apply",
+   "confidence": 0.85,
+   "evidence": "Independent solve: C (conf 0.96). Key: C. An option is blank in the stored record.",
+   "compare": {
+    "solve": "C",
+    "solveConfidence": 0.96,
+    "key": "C",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": false
+   },
+   "subject": "Physics",
+   "chapter": "Electrostatics",
+   "questionType": "scq",
+   "reportIds": [
+    "R011"
+   ],
+   "themes": {
+    "blank_option": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68ecbacb2ec87a18deba1ad7",
+   "verdict": "defect",
+   "repair": "wrong_chapter",
+   "route": "faculty_review",
+   "confidence": 0.85,
+   "evidence": "Independent solve: B (conf 0.98). Key: B. Student reports the chapter/subject is wrong.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.98,
+    "key": "B",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Botany",
+   "chapter": "The Living World",
+   "questionType": "scq",
+   "reportIds": [
+    "R023"
+   ],
+   "themes": {
+    "chapter": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "68f21df0941cda588bc0470b",
+   "verdict": "app_issue",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.85,
+   "evidence": "Independent solve: A (conf 0.97). Key: A. Complaint describes app behaviour.",
+   "compare": {
+    "solve": "A",
+    "solveConfidence": 0.97,
+    "key": "A",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Work, power and energy",
+   "questionType": "scq",
+   "reportIds": [
+    "R038"
+   ],
+   "themes": {
+    "app": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "695ee00b88d7701e561aabc5",
+   "verdict": "defect",
+   "repair": "unsound",
+   "route": "faculty_review",
+   "confidence": 0.85,
+   "evidence": "Independent solve: insufficient (conf 0.96). Key: D. The solve finds no correct printed option; the item has no valid answer as written.",
+   "compare": {
+    "solve": null,
+    "solveConfidence": 0.96,
+    "key": "D",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Waves",
+   "questionType": "scq",
+   "reportIds": [
+    "R034"
+   ],
+   "themes": {
+    "answer": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "5fc60508028950133eac8963",
+   "verdict": "defect",
+   "repair": "answer_form",
+   "route": "auto_apply",
+   "confidence": 0.8,
+   "evidence": "Independent solve: 20 (conf 0.96). Key: 20. Unit/answer form is not stated.",
+   "compare": {
+    "solve": "20",
+    "solveConfidence": 0.96,
+    "key": "20",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Newton's law of motion",
+   "questionType": "integerQuestion",
+   "reportIds": [
+    "R024"
+   ],
+   "themes": {
+    "unit": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "60f742f6660d187cc13a8078",
+   "verdict": "defect",
+   "repair": "stem_data",
+   "route": "auto_apply",
+   "confidence": 0.8,
+   "evidence": "Independent solve: B (conf 0.85). Key: C. Student reports missing data and the solve had to assume a value (confidence 0.85).",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.85,
+    "key": "C",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Alternating Current and EM Waves",
+   "questionType": "scq",
+   "reportIds": [
+    "R008",
+    "R007"
+   ],
+   "themes": {
+    "missing_data": 2
+   },
+   "reportCount": 2
+  },
+  {
+   "questionId": "696a866665252c04fc1f81c2",
+   "verdict": "defect",
+   "repair": "stem_data",
+   "route": "auto_apply",
+   "confidence": 0.8,
+   "evidence": "Independent solve: insufficient (conf 0.00). Key: 50. Solve reports insufficient information: a required value is missing from the stem.",
+   "compare": {
+    "solve": null,
+    "solveConfidence": 0.0,
+    "key": "50",
+    "solutionSupportsSolve": false,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Properties of matter and fluid mechanics",
+   "questionType": "integerQuestion",
+   "reportIds": [
+    "R006"
+   ],
+   "themes": {
+    "missing_data": 1
+   },
+   "reportCount": 1
+  },
+  {
+   "questionId": "622f08d7b70e4b50e4500a1b",
+   "verdict": "defect",
+   "repair": "option_repair",
+   "route": "faculty_review",
+   "confidence": 0.72,
+   "evidence": "Independent solve: C (conf 0.96). Key: C. Only 3 options stored; restoring a missing distractor is authored content.",
+   "compare": {
+    "solve": "C",
+    "solveConfidence": 0.96,
+    "key": "C",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Physics",
+   "chapter": "Centre of mass and momentum conservation (collision)",
+   "questionType": "scq",
+   "reportIds": [
+    "R010",
+    "R009"
+   ],
+   "themes": {
+    "blank_option": 2
+   },
+   "reportCount": 2
+  },
+  {
+   "questionId": "620e23cecc50543bc7db9186",
+   "verdict": "defect",
+   "repair": "syllabus",
+   "route": "faculty_review",
+   "confidence": 0.6,
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Student claims it is outside the syllabus; needs a curriculum call.",
+   "compare": {
+    "solve": "B",
+    "solveConfidence": 0.97,
+    "key": "B",
+    "solutionSupportsSolve": true,
+    "solutionSupportsKey": true
+   },
+   "subject": "Zoology",
+   "chapter": "Evolution",
+   "questionType": "scq",
+   "reportIds": [
+    "R026"
+   ],
+   "themes": {
+    "syllabus": 1
+   },
+   "reportCount": 1
+  }
+ ],
+ "reports": [
+  {
+   "reportId": "R001",
+   "questionId": "60f744b3f1b9bc7cc7b4a949",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R002",
+   "questionId": "60f744b3f1b9bc7cc7b4a949",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R003",
+   "questionId": "60f744b3f1b9bc7cc7b4a949",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R004",
+   "questionId": "68e870ef42c06737d6e565c4",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R005",
+   "questionId": "68dea616d0cda73d07e93ae6",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R006",
+   "questionId": "696a866665252c04fc1f81c2",
+   "verdict": "defect",
+   "repair": "stem_data",
+   "route": "auto_apply",
+   "confidence": 0.8
+  },
+  {
+   "reportId": "R007",
+   "questionId": "60f742f6660d187cc13a8078",
+   "verdict": "defect",
+   "repair": "stem_data",
+   "route": "auto_apply",
+   "confidence": 0.8
+  },
+  {
+   "reportId": "R008",
+   "questionId": "60f742f6660d187cc13a8078",
+   "verdict": "defect",
+   "repair": "stem_data",
+   "route": "auto_apply",
+   "confidence": 0.8
+  },
+  {
+   "reportId": "R009",
+   "questionId": "622f08d7b70e4b50e4500a1b",
+   "verdict": "defect",
+   "repair": "option_repair",
+   "route": "faculty_review",
+   "confidence": 0.72
+  },
+  {
+   "reportId": "R010",
+   "questionId": "622f08d7b70e4b50e4500a1b",
+   "verdict": "defect",
+   "repair": "option_repair",
+   "route": "faculty_review",
+   "confidence": 0.72
+  },
+  {
+   "reportId": "R011",
+   "questionId": "68e872546e45ba37dcc16bc0",
+   "verdict": "defect",
+   "repair": "option_repair",
+   "route": "auto_apply",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R012",
+   "questionId": "61dffbec08489156b684bd22",
+   "verdict": "defect",
+   "repair": "spelling",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R013",
+   "questionId": "617fa18efd53ff1629ed890f",
+   "verdict": "defect",
+   "repair": "exam_reference",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R014",
+   "questionId": "63765a28f1d8416ae0408d89",
+   "verdict": "defect",
+   "repair": "markup_leak",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R015",
+   "questionId": "6956d79788d7701e5617bc29",
+   "verdict": "defect",
+   "repair": "identical_options",
+   "route": "faculty_review",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R016",
+   "questionId": "6263d75bdd44e265ef926d97",
+   "verdict": "defect",
+   "repair": "solution_fix",
+   "route": "auto_apply",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R017",
+   "questionId": "6208e80a9cb2ab67dac61bd0",
+   "verdict": "already_fixed",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R018",
+   "questionId": "612151a6a34397610a9a2e58",
+   "verdict": "defect",
+   "repair": "solution_fix",
+   "route": "auto_apply",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R019",
+   "questionId": "612151a6a34397610a9a2e58",
+   "verdict": "defect",
+   "repair": "solution_fix",
+   "route": "auto_apply",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R020",
+   "questionId": "68c8153cfb6b2f16e2d3ceaf",
+   "verdict": "app_issue",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R021",
+   "questionId": "68f21caf941cda588bc04365",
+   "verdict": "defect",
+   "repair": "type_mismatch",
+   "route": "auto_apply",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R022",
+   "questionId": "61ee6c9d90a1a968a168686b",
+   "verdict": "defect",
+   "repair": "spelling",
+   "route": "auto_apply",
+   "confidence": 0.95
+  },
+  {
+   "reportId": "R023",
+   "questionId": "68ecbacb2ec87a18deba1ad7",
+   "verdict": "defect",
+   "repair": "wrong_chapter",
+   "route": "faculty_review",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R024",
+   "questionId": "5fc60508028950133eac8963",
+   "verdict": "defect",
+   "repair": "answer_form",
+   "route": "auto_apply",
+   "confidence": 0.8
+  },
+  {
+   "reportId": "R025",
+   "questionId": "622df25ab70e4b50e44ff837",
+   "verdict": "defect",
+   "repair": "diagram",
+   "route": "faculty_review",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R026",
+   "questionId": "620e23cecc50543bc7db9186",
+   "verdict": "defect",
+   "repair": "syllabus",
+   "route": "faculty_review",
+   "confidence": 0.6
+  },
+  {
+   "reportId": "R027",
+   "questionId": "6062ec84518e9535e120c422",
+   "verdict": "not_actionable",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R028",
+   "questionId": "6956d7bb23cb221e570d6013",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R029",
+   "questionId": "68e8734442c06737d6e56da4",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R030",
+   "questionId": "6956d7e988d7701e5617bd3e",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R031",
+   "questionId": "68dea619d0cda73d07e93aee",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R032",
+   "questionId": "68dea7c2387eea3d0d95f9bb",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R033",
+   "questionId": "68dea715387eea3d0d95f790",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R034",
+   "questionId": "695ee00b88d7701e561aabc5",
+   "verdict": "defect",
+   "repair": "unsound",
+   "route": "faculty_review",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R035",
+   "questionId": "66fe9dbe22132e5a70a3e579",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R036",
+   "questionId": "60ca4feb6420652745f55522",
+   "verdict": "display_issue",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R037",
+   "questionId": "68c9ae5afb6b2f16e2d43b1c",
+   "verdict": "display_issue",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R038",
+   "questionId": "68f21df0941cda588bc0470b",
+   "verdict": "app_issue",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R039",
+   "questionId": "68c801bc1b1dbc16dc93bf2b",
+   "verdict": "language_mode",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R040",
+   "questionId": "6264197209f4fd65f58f5707",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R041",
+   "questionId": "6208e298fa399567e0878700",
+   "verdict": "not_actionable",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R042",
+   "questionId": "63c7cce12981ed154ee92c94",
+   "verdict": "defect",
+   "repair": "wrong_chapter",
+   "route": "faculty_review",
+   "confidence": 0.85
+  },
+  {
+   "reportId": "R043",
+   "questionId": "636283dbe3770c24f866e6d6",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R044",
+   "questionId": "68dea577d0cda73d07e9391c",
+   "verdict": "no_error",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  },
+  {
+   "reportId": "R045",
+   "questionId": "6208e80a9cb2ab67dac61bd0",
+   "verdict": "already_fixed",
+   "repair": null,
+   "route": "no_change",
+   "confidence": 0.9
+  }
+ ]
+}

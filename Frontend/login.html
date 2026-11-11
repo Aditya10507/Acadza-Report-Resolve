@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Acadza · Sign in</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath d='M8 21l5-10 3 6 2-3.5L24 21z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="student.css" />
+</head>
+<body class="auth-body">
+  <main class="auth-card">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" width="34" height="34"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M8 21l5-10 3 6 2-3.5L24 21z" fill="#fff"/></svg>
+    </div>
+    <h1>Acadza demo</h1>
+    <p class="auth-sub">Sign in to practice as a student or review as faculty.</p>
+
+    <div class="auth-tabs" id="authTabs">
+      <button class="auth-tab active" data-mode="login" type="button">Login</button>
+      <button class="auth-tab" data-mode="signup" type="button">Sign up</button>
+    </div>
+
+    <form id="authForm" autocomplete="off">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" required minlength="3" maxlength="24" placeholder="e.g. priya_12" spellcheck="false" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required minlength="4" placeholder="demo: student123 / faculty123" />
+      <div id="roleRow" class="role-row hidden">
+        <span class="role-label">Sign up as</span>
+        <span class="role-choice">
+          <label class="chip f-chip active"><input type="radio" name="role" value="student" checked /> Student</label>
+          <label class="chip f-chip"><input type="radio" name="role" value="faculty" /> Faculty</label>
+        </span>
+      </div>
+      <button class="btn primary big auth-go" id="authGo" type="submit">Sign in</button>
+      <p class="auth-error hidden" id="authError"></p>
+    </form>
+
+    <div class="auth-demo">
+      <span>Demo accounts</span>
+      <code>student / student123</code>
+      <code>faculty / faculty123</code>
+    </div>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Acadza · Report → Fix Console</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath d='M8 21l5-10 3 6 2-3.5L24 21z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ================= TOP BAR ================= -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M8 21l5-10 3 6 2-3.5L24 21z" fill="#fff"/></svg>
+      </span>
+      <div class="brand-text">
+        <strong>Acadza</strong>
+        <span>Faculty review</span>
+      </div>
+    </div>
+
+    <div class="top-stats" id="topStats" aria-label="Queue summary"></div>
+
+    <div class="top-actions">
+      <div class="reviewer-chip" id="reviewerChip" title="Click to change your name (recorded in the audit trail)">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <span id="reviewerName">Reviewer</span>
+      </div>
+      <button class="btn ghost icon-btn" id="themeToggle" title="Toggle light / dark" aria-label="Toggle theme"></button>
+      <button class="btn ghost" id="pipelineBtn" title="Sync new student queries through the AI pipeline" type="button">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v9h-9"/></svg>
+        Process queries
+      </button>
+      <button class="btn ghost" id="auditBtn">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        Audit log
+      </button>
+      <button class="btn ghost" id="logoutBtn" title="End the demo session">Log out</button>
+    </div>
+  </header>
+
+  <!-- ================= MAIN LAYOUT ================= -->
+  <main class="layout">
+    <!-- Queue -->
+    <aside class="queue" id="queuePanel">
+      <div class="queue-head">
+        <div class="queue-title">
+          <h1>Fixes to review</h1>
+          <span id="queueCount" aria-live="polite"></span>
+        </div>
+        <div class="search-wrap">
+          <svg class="search-ico" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input id="search" type="search" placeholder="Search reports…" autocomplete="off" spellcheck="false" />
+          <kbd>/</kbd>
+        </div>
+
+        <button class="btn ghost filters-toggle" id="filtersToggle" type="button"
+                aria-expanded="false" aria-controls="filterControls">
+          <span>Filters</span>
+          <span class="filter-count hidden" id="activeFilterCount"></span>
+          <svg class="filter-caret" viewBox="0 0 24 24" width="14" height="14" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+
+        <div class="filter-controls" id="filterControls" hidden>
+          <div class="filter-row" id="statusFilters" role="group" aria-label="Status filter">
+            <button class="chip f-chip active" data-status="all">All</button>
+            <button class="chip f-chip" data-status="pending">Pending</button>
+            <button class="chip f-chip" data-status="resolved">Resolved</button>
+          </div>
+
+          <div class="filter-row" id="verdictFilters" role="group" aria-label="Verdict filter"></div>
+
+          <div class="filter-row" id="severityFilters" role="group" aria-label="Severity filter">
+            <button class="chip f-chip sev-critical" data-sev="critical">Critical</button>
+            <button class="chip f-chip sev-high" data-sev="high">High</button>
+            <button class="chip f-chip sev-medium" data-sev="medium">Medium</button>
+            <button class="chip f-chip sev-low" data-sev="low">Low</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="queue-scroll" id="queueList" tabindex="-1" aria-label="Defect reports awaiting faculty review"></div>
+
+      <footer class="queue-foot">
+        <span id="queueFootLabel">—</span>
+        <span class="foot-hints"><kbd>J</kbd><kbd>K</kbd> navigate · <kbd>A</kbd> approve · <kbd>R</kbd> reject</span>
+      </footer>
+    </aside>
+
+    <!-- Detail -->
+    <section class="detail" id="detailPanel" tabindex="-1">
+      <div class="detail-loading" id="detailLoading">
+        <div class="spinner"></div>
+        <p>Loading console data…</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= TOASTS ================= -->
+  <div class="toast-region" id="toasts" aria-live="polite"></div>
+
+  <!-- ================= AUDIT DIALOG ================= -->
+  <dialog class="panel-dialog" id="auditDialog">
+    <div class="dialog-head">
+      <h2><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h13l3 3v13H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg> Audit trail</h2>
+      <button class="btn ghost icon-btn" id="auditClose" aria-label="Close">✕</button>
+    </div>
+    <div class="dialog-note" id="auditMeta"></div>
+    <div class="audit-list" id="auditList"></div>
+    <div class="dialog-foot">
+      <button class="btn ghost" id="auditCopy">Copy as JSON</button>
+      <button class="btn primary" id="auditDownload">Download audit_log.jsonl</button>
+    </div>
+  </dialog>
+
+  <!-- ================= CONFIRM DIALOG ================= -->
+  <dialog class="panel-dialog" id="confirmDialog">
+    <div class="dialog-head">
+      <h2 id="confirmTitle">Confirm action</h2>
+      <button class="btn ghost icon-btn" id="confirmClose" aria-label="Close">✕</button>
+    </div>
+    <div class="confirm-body" id="confirmBody"></div>
+    <div class="dialog-foot">
+      <button class="btn ghost" id="confirmCancel">Cancel</button>
+      <button class="btn primary" id="confirmGo">Confirm</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

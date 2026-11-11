@@ -1,0 +1,977 @@
+{
+ "generatedAt": "2026-11-11T11:20:51+00:00",
+ "summary": {
+  "cases": 21,
+  "bySeverity": {
+   "critical": 4,
+   "high": 8,
+   "medium": 4,
+   "low": 5
+  },
+  "byRepair": {
+   "answer_key": 3,
+   "unsound": 1,
+   "type_mismatch": 1,
+   "solution_fix": 2,
+   "diagram": 1,
+   "option_repair": 2,
+   "stem_data": 2,
+   "identical_options": 1,
+   "wrong_chapter": 2,
+   "syllabus": 1,
+   "exam_reference": 1,
+   "spelling": 2,
+   "markup_leak": 1,
+   "answer_form": 1
+  },
+  "autoApplicable": 3,
+  "manualFixRequired": 18,
+  "taxonomyRepairs": 18
+ },
+ "cases": [
+  {
+   "caseId": "60f744b3f1b9bc7cc7b4a949",
+   "questionId": "60f744b3f1b9bc7cc7b4a949",
+   "subject": "Physics",
+   "chapter": "Alternating Current and EM Waves",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "severity": "critical",
+   "confidence": 0.95,
+   "headline": "Answer key is wrong",
+   "errorExplanation": "The stored key is (C) 130 V, but solving the question independently gives (A) 50 V. The stored solution also reaches the independent answer, so the key is the field that is wrong. Independent working: In a series LCR, V_supply = sqrt(V_R^2 + (V_L - V_C)^2). Compute: V_R=40 V, V_L-V_C=60-30=30 V. So V = sqrt(40^2+30^2)=sqrt(1600+900)=sqrt(2500)=50 V.",
+   "evidence": "Independent solve: A (conf 0.97). Key: C. The stored solution supports the independent solve, not the key.",
+   "current": {
+    "answer": "C",
+    "display": "(C) 130 V"
+   },
+   "suggested": {
+    "answer": "A",
+    "display": "(A) 50 V"
+   },
+   "diff": {
+    "field": "answer",
+    "before": "(C) 130 V",
+    "after": "(A) 50 V"
+   },
+   "suggestedEdit": {
+    "field": "answer",
+    "find": "C",
+    "replace": "A"
+   },
+   "manualFixRequired": false,
+   "manualReason": "",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R002",
+     "studentId": "stu_05afd283",
+     "source": "ios",
+     "reportedAt": "2026-11-03T22:11:00Z",
+     "comment": "wrong ans",
+     "theme": "answer"
+    },
+    {
+     "reportId": "R003",
+     "studentId": "stu_e7c98753",
+     "source": "ios",
+     "reportedAt": "2026-11-04T10:42:00Z",
+     "comment": "Sir root(40^2+30^2)=50 then why 130??",
+     "theme": "answer"
+    },
+    {
+     "reportId": "R001",
+     "studentId": "stu_cd48eb56",
+     "source": "web",
+     "reportedAt": "2026-11-07T01:25:00Z",
+     "comment": "answer should be 50V. solution also says 50 but key is C",
+     "theme": "answer"
+    }
+   ],
+   "reportCount": 3,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "68dea616d0cda73d07e93ae6",
+   "questionId": "68dea616d0cda73d07e93ae6",
+   "subject": "Physics",
+   "chapter": "Electrostatics",
+   "questionType": "integerQuestion",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "severity": "critical",
+   "confidence": 0.95,
+   "headline": "Answer key is wrong",
+   "errorExplanation": "The stored key is 2, but solving the question independently gives 1. The stored solution also reaches the independent answer, so the key is the field that is wrong. Independent working: Flux from q/2 at face centre = (q/2)/(2ε0)=q/(4ε0). Flux from 2q at corner = (2q)/(8ε0)=q/(4ε0). Sum = q/(2ε0) => n=1.",
+   "evidence": "Independent solve: 1 (conf 0.96). Key: 2. The stored solution supports the independent solve, not the key.",
+   "current": {
+    "answer": "2",
+    "display": "2"
+   },
+   "suggested": {
+    "answer": "1",
+    "display": "1"
+   },
+   "diff": {
+    "field": "answer",
+    "before": "2",
+    "after": "1"
+   },
+   "suggestedEdit": {
+    "field": "answer",
+    "find": "2",
+    "replace": "1"
+   },
+   "manualFixRequired": false,
+   "manualReason": "",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R005",
+     "studentId": "stu_ded66167",
+     "source": "web",
+     "reportedAt": "2026-11-03T19:14:00Z",
+     "comment": "answer key wrong i got n=1",
+     "theme": "answer"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "68e870ef42c06737d6e565c4",
+   "questionId": "68e870ef42c06737d6e565c4",
+   "subject": "Physics",
+   "chapter": "Kinetic theory of gases",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "answer_key",
+   "route": "auto_apply",
+   "severity": "critical",
+   "confidence": 0.95,
+   "headline": "Answer key is wrong",
+   "errorExplanation": "The stored key is (A) 4556 N / m 2, but solving the question independently gives (D) 4800 N / m 2. The stored solution also reaches the independent answer, so the key is the field that is wrong. Independent working: Use kinetic theory: P = (1/3)ρv_rms^2. ρ = 9×10⁻² kg/m³ = 0.09 kg/m³, v_rms = 400 m/s. Compute v² = 1.6×10⁵, then ρv² = 0.09×1.6×10⁵ = 1.44×10⁴. Divide by 3 gives P = 4.8×10³ Pa = 4800 N/m².",
+   "evidence": "Independent solve: D (conf 0.99). Key: A. The stored solution supports the independent solve, not the key.",
+   "current": {
+    "answer": "A",
+    "display": "(A) 4556 N / m 2"
+   },
+   "suggested": {
+    "answer": "D",
+    "display": "(D) 4800 N / m 2"
+   },
+   "diff": {
+    "field": "answer",
+    "before": "(A) 4556 N / m 2",
+    "after": "(D) 4800 N / m 2"
+   },
+   "suggestedEdit": {
+    "field": "answer",
+    "find": "A",
+    "replace": "D"
+   },
+   "manualFixRequired": false,
+   "manualReason": "",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R004",
+     "studentId": "stu_78da7ee1",
+     "source": "android",
+     "reportedAt": "2026-11-04T00:50:00Z",
+     "comment": "ans galat hai, 8225 aana chahiye",
+     "theme": "answer"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "695ee00b88d7701e561aabc5",
+   "questionId": "695ee00b88d7701e561aabc5",
+   "subject": "Physics",
+   "chapter": "Waves",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "unsound",
+   "route": "faculty_review",
+   "severity": "critical",
+   "confidence": 0.85,
+   "headline": "No valid option as written",
+   "errorExplanation": "Checking every option shows that none of them is correct as written. Independent working: I = I1+I2+2√(I1I2)cosφ. For φ=π/2, I=2I1, so A false. R claims intensity always sum for any non‑zero phase, which is false (e.g., φ=π/4 gives extra term). Both statements false; no option matches.",
+   "evidence": "Independent solve: insufficient (conf 0.96). Key: D. The solve finds no correct printed option; the item has no valid answer as written.",
+   "current": {
+    "answer": "D",
+    "display": "(D) A is false, but R is true"
+   },
+   "suggested": null,
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "The item must be rewritten, not patched.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R034",
+     "studentId": "stu_73041999",
+     "source": "android",
+     "reportedAt": "2026-11-04T01:34:00Z",
+     "comment": "assertion is true, intensity remains same",
+     "theme": "answer"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "68f21caf941cda588bc04365",
+   "questionId": "68f21caf941cda588bc04365",
+   "subject": "Physics",
+   "chapter": "Mathematics in physics",
+   "questionType": "mcq",
+   "verdict": "defect",
+   "repair": "type_mismatch",
+   "route": "auto_apply",
+   "severity": "high",
+   "confidence": 0.9,
+   "headline": "Question is stored as the wrong type",
+   "errorExplanation": "The item is stored as multiple-correct but only one option is correct. Independent working: N0=48×10^23, N=6×10^23 after t=3 min. N/N0=1/8=e^{-λt} ⇒ λ=ln8/3= (3 ln2)/3=ln2≈0.693 min⁻¹. Mean life τ=1/λ≈1/0.693≈1.44 min.",
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Multiple-correct type but only one correct option stored.",
+   "current": {
+    "answer": "B",
+    "display": "(B) 1.44 min"
+   },
+   "suggested": {
+    "answer": "B",
+    "display": "(B) 1.44 min"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "Changing the type also changes the answer format.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R021",
+     "studentId": "stu_9ad2674e",
+     "source": "android",
+     "reportedAt": "2026-11-07T11:44:00Z",
+     "comment": "only B is correct but its multiple correct type and I got negative",
+     "theme": "answer"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "612151a6a34397610a9a2e58",
+   "questionId": "612151a6a34397610a9a2e58",
+   "subject": "Physics",
+   "chapter": "Photoelectric effect and matter waves",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "solution_fix",
+   "route": "auto_apply",
+   "severity": "high",
+   "confidence": 0.85,
+   "headline": "Stored solution is wrong or belongs to another question",
+   "errorExplanation": "The independent solve agrees with the key, but the stored solution does not prove that answer. Independent working: Use λ = h/p → p = h/λ. KE = p²/(2m) = h²/(2mλ²). Substituting h=6.626×10⁻³⁴ J·s, m=9.11×10⁻³¹ kg, λ=0.3×10⁻⁹ m gives KE≈2.68×10⁻¹⁸ J = 16.7 eV ≈16.8 eV, option B.",
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Solve agrees with the key, but the student reports the solution is wrong or from another question.",
+   "current": {
+    "answer": "B",
+    "display": "(B) 16.8 eV"
+   },
+   "suggested": {
+    "answer": "B",
+    "display": "(B) 16.8 eV"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "The replacement solution must be written by a human.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R018",
+     "studentId": "stu_86ae0f33",
+     "source": "ios",
+     "reportedAt": "2026-11-05T17:14:00Z",
+     "comment": "solution is of some other question",
+     "theme": "solution"
+    },
+    {
+     "reportId": "R019",
+     "studentId": "stu_80316cde",
+     "source": "android",
+     "reportedAt": "2026-11-08T05:45:00Z",
+     "comment": "solution me 5.47 angstrom aa raha hai, question me kuch aur pucha hai",
+     "theme": "solution"
+    }
+   ],
+   "reportCount": 2,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "622df25ab70e4b50e44ff837",
+   "questionId": "622df25ab70e4b50e44ff837",
+   "subject": "Physics",
+   "chapter": "Properties of matter and fluid mechanics",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "diagram",
+   "route": "faculty_review",
+   "severity": "high",
+   "confidence": 0.85,
+   "headline": "Required figure is missing",
+   "errorExplanation": "The stem refers to a figure that is not stored with the question. Independent working: Pressure inside a soap bubble = external pressure + 4γ/R. For the hemispherical bubble R = r, giving higher pressure than the sub‑hemispherical bubble whose curvature radius R > r. Opening the valve drives flow from high to low pressure (end 1 → end 2). Air leaving end 1 lowers its pressure, increasing its curvature radius and reducing its height, so its volume decreases. Hence option B.",
+   "evidence": "Independent solve: B (conf 0.96). Key: B. Student reports a missing figure.",
+   "current": {
+    "answer": "B",
+    "display": "(B) air from end 1 flows towards end 2. Volume of the soap bubble at end 1 decreases"
+   },
+   "suggested": {
+    "answer": "B",
+    "display": "(B) air from end 1 flows towards end 2. Volume of the soap bubble at end 1 decreases"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "A figure cannot be generated from text.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R025",
+     "studentId": "stu_98e5a16f",
+     "source": "ios",
+     "reportedAt": "2026-11-08T11:33:00Z",
+     "comment": "Figure not given",
+     "theme": "diagram"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "6263d75bdd44e265ef926d97",
+   "questionId": "6263d75bdd44e265ef926d97",
+   "subject": "Physics",
+   "chapter": "Properties of matter and fluid mechanics",
+   "questionType": "integerQuestion",
+   "verdict": "defect",
+   "repair": "solution_fix",
+   "route": "auto_apply",
+   "severity": "high",
+   "confidence": 0.85,
+   "headline": "Stored solution is wrong or belongs to another question",
+   "errorExplanation": "The independent solve agrees with the key, but the stored solution does not prove that answer. Independent working: Let side = L cm. With 800 g weight, cube is fully submerged: buoyant force = L^3 g = weight of cube + 800 g → L^3 = m_c + 800. Without weight, top is 2 cm above water, so submerged height = L‑2, submerged volume = L^2(L‑2) → m_c = L^2(L‑2). Substitute m_c: L^3 = L^2(L‑2)+800 → -2L^2+800=0 → L^2=400 → L=20 cm.",
+   "evidence": "Independent solve: 20 (conf 0.97). Key: 20. Solve agrees with the key, but the student reports the solution is wrong or from another question.",
+   "current": {
+    "answer": "20",
+    "display": "20"
+   },
+   "suggested": {
+    "answer": "20",
+    "display": "20"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "The replacement solution must be written by a human.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R016",
+     "studentId": "stu_04b58dd5",
+     "source": "android",
+     "reportedAt": "2026-11-05T12:18:00Z",
+     "comment": "solution says 40 cm but answer is 20, which one is correct?",
+     "theme": "solution"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "68e872546e45ba37dcc16bc0",
+   "questionId": "68e872546e45ba37dcc16bc0",
+   "subject": "Physics",
+   "chapter": "Electrostatics",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "option_repair",
+   "route": "auto_apply",
+   "severity": "high",
+   "confidence": 0.85,
+   "headline": "Option set is incomplete",
+   "errorExplanation": "The stored option list is incomplete, so the question cannot be answered as printed. Independent working: Coulomb's law: F = k|q1 q2|/r^2. Both charges experience the same magnitude F = k·3·4/r^2, so F_on_+3μC = F_on_-4μC. Ratio = 1:1.",
+   "evidence": "Independent solve: C (conf 0.96). Key: C. An option is blank in the stored record.",
+   "current": {
+    "answer": "C",
+    "display": "(C)"
+   },
+   "suggested": {
+    "answer": "C",
+    "display": "(C)"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "The missing or blank option is authored content.",
+   "missingOptions": [],
+   "blankOptions": [
+    "C"
+   ],
+   "reports": [
+    {
+     "reportId": "R011",
+     "studentId": "stu_9012b2e9",
+     "source": "android",
+     "reportedAt": "2026-11-07T21:19:00Z",
+     "comment": "option C blank hai, answer C hai toh kya mark karu",
+     "theme": "blank_option"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "60f742f6660d187cc13a8078",
+   "questionId": "60f742f6660d187cc13a8078",
+   "subject": "Physics",
+   "chapter": "Alternating Current and EM Waves",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "stem_data",
+   "route": "auto_apply",
+   "severity": "high",
+   "confidence": 0.8,
+   "headline": "Question is missing a required value",
+   "errorExplanation": "The question cannot be solved from the stem alone: a required value is missing, and the independent solve reports insufficient information. Independent working: Z = √(R² + X_L²) with X_L = 2πfL. L not given, but at 50 Hz typical inductive reactance is small, so X_L ≪ R and Z ≈ R = 40 Ω.",
+   "evidence": "Independent solve: B (conf 0.85). Key: C. Student reports missing data and the solve had to assume a value (confidence 0.85).",
+   "current": {
+    "answer": "C",
+    "display": "(C) 50 ohm"
+   },
+   "suggested": {
+    "answer": "B",
+    "display": "(B) 40 ohm"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "The missing value has to be inserted into the stem by a human.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R008",
+     "studentId": "stu_7c61907c",
+     "source": "android",
+     "reportedAt": "2026-11-04T01:08:00Z",
+     "comment": "data missing",
+     "theme": "missing_data"
+    },
+    {
+     "reportId": "R007",
+     "studentId": "stu_9d97e169",
+     "source": "web",
+     "reportedAt": "2026-11-04T09:46:00Z",
+     "comment": "inductance ki value hi nahi di hai",
+     "theme": "missing_data"
+    }
+   ],
+   "reportCount": 2,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "696a866665252c04fc1f81c2",
+   "questionId": "696a866665252c04fc1f81c2",
+   "subject": "Physics",
+   "chapter": "Properties of matter and fluid mechanics",
+   "questionType": "integerQuestion",
+   "verdict": "defect",
+   "repair": "stem_data",
+   "route": "auto_apply",
+   "severity": "high",
+   "confidence": 0.8,
+   "headline": "Question is missing a required value",
+   "errorExplanation": "The question cannot be solved from the stem alone: a required value is missing, and the independent solve reports insufficient information. Independent working: Bulk modulus K = -ΔP/(ΔV/V) gives ΔV = -ΔP·V/K. The original volume V of the copper cube is required but not specified, so the volume contraction cannot be determined.",
+   "evidence": "Independent solve: insufficient (conf 0.00). Key: 50. Solve reports insufficient information: a required value is missing from the stem.",
+   "current": {
+    "answer": "50",
+    "display": "50"
+   },
+   "suggested": null,
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "The missing value has to be inserted into the stem by a human.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R006",
+     "studentId": "stu_aa78f622",
+     "source": "android",
+     "reportedAt": "2026-11-08T03:11:00Z",
+     "comment": "edge length of cube is not given how to find volume",
+     "theme": "missing_data"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "622f08d7b70e4b50e4500a1b",
+   "questionId": "622f08d7b70e4b50e4500a1b",
+   "subject": "Physics",
+   "chapter": "Centre of mass and momentum conservation (collision)",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "option_repair",
+   "route": "faculty_review",
+   "severity": "high",
+   "confidence": 0.72,
+   "headline": "Option set is incomplete",
+   "errorExplanation": "The stored option list is incomplete, so the question cannot be answered as printed. Independent working: Initial total momentum = 0. External impulse gives the 10 kg block v=14 m/s; the 4 kg block is initially at rest. Total momentum after impulse = 10×14 = 140 kg·m/s. Total mass = 10+4 = 14 kg. Centre‑of‑mass speed = 140/14 = 10 m/s. Hence option C.",
+   "evidence": "Independent solve: C (conf 0.96). Key: C. Only 3 options stored; restoring a missing distractor is authored content.",
+   "current": {
+    "answer": "C",
+    "display": "(C) 10 m / s"
+   },
+   "suggested": {
+    "answer": "C",
+    "display": "(C) 10 m / s"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "The missing or blank option is authored content.",
+   "missingOptions": [
+    "D"
+   ],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R010",
+     "studentId": "stu_b122a682",
+     "source": "ios",
+     "reportedAt": "2026-11-04T01:53:00Z",
+     "comment": "only 3 options showing",
+     "theme": "blank_option"
+    },
+    {
+     "reportId": "R009",
+     "studentId": "stu_a20daf58",
+     "source": "ios",
+     "reportedAt": "2026-11-05T21:57:00Z",
+     "comment": "option D is missing",
+     "theme": "blank_option"
+    }
+   ],
+   "reportCount": 2,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "6956d79788d7701e5617bc29",
+   "questionId": "6956d79788d7701e5617bc29",
+   "subject": "Physics",
+   "chapter": "AC Circuits",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "identical_options",
+   "route": "faculty_review",
+   "severity": "medium",
+   "confidence": 0.9,
+   "headline": "Two options are identical",
+   "errorExplanation": "Two options carry the same text, which makes the key ambiguous. Independent working: Current i =5 sin(100t-π/2) = -5 cos100t, voltage e=200 sin100t. Phase difference φ=90°, cosφ=0. Average power P=Vrms Irms cosφ = (200/√2)(5/√2)*0 =0 W. Hence option B.",
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Two options have identical text.",
+   "current": {
+    "answer": "B",
+    "display": "(B) 0 W"
+   },
+   "suggested": {
+    "answer": "B",
+    "display": "(B) 0 W"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "A new distractor has to be authored.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R015",
+     "studentId": "stu_48b0747b",
+     "source": "ios",
+     "reportedAt": "2026-11-05T10:21:00Z",
+     "comment": "two options are same B and C",
+     "theme": "duplicate_option"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "63c7cce12981ed154ee92c94",
+   "questionId": "63c7cce12981ed154ee92c94",
+   "subject": "Physics",
+   "chapter": "Geometrical optics and optical instruments",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "wrong_chapter",
+   "route": "faculty_review",
+   "severity": "medium",
+   "confidence": 0.85,
+   "headline": "Question is filed under the wrong chapter",
+   "errorExplanation": "Independent solve: C (conf 0.97). Key: C. Student reports the chapter/subject is wrong. Independent working: Id = ε0 κ A/d * dV/dt. ε0=8.85×10⁻¹² F/m, κ=10, A=1 m², d=1×10⁻³ m, dV/dt=25 V/s. Id=8.85×10⁻¹²×10×(1/10⁻³)×25≈2.2×10⁻⁶ A = 2.2 μA.",
+   "evidence": "Independent solve: C (conf 0.97). Key: C. Student reports the chapter/subject is wrong.",
+   "current": {
+    "answer": "C",
+    "display": "(C) 2.2 μ A"
+   },
+   "suggested": {
+    "answer": "C",
+    "display": "(C) 2.2 μ A"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "Reclassification needs a curriculum decision.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R042",
+     "studentId": "stu_d09e82a1",
+     "source": "web",
+     "reportedAt": "2026-11-04T07:00:00Z",
+     "comment": "chapter is wrong, displacement current is not geometrical optics",
+     "theme": "chapter"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "68ecbacb2ec87a18deba1ad7",
+   "questionId": "68ecbacb2ec87a18deba1ad7",
+   "subject": "Botany",
+   "chapter": "The Living World",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "wrong_chapter",
+   "route": "faculty_review",
+   "severity": "medium",
+   "confidence": 0.85,
+   "headline": "Question is filed under the wrong chapter",
+   "errorExplanation": "Independent solve: B (conf 0.98). Key: B. Student reports the chapter/subject is wrong. Independent working: During the absolute refractory period voltage‑gated Na⁺ channels are inactivated and cannot reopen, preventing any new action potential. Closure of K⁺ channels and Na⁺/K⁺ pump activity relate to repolarization/relative refractory, not the absolute phase.",
+   "evidence": "Independent solve: B (conf 0.98). Key: B. Student reports the chapter/subject is wrong.",
+   "current": {
+    "answer": "B",
+    "display": "(B) Inactivation of voltage-gated Na + channels"
+   },
+   "suggested": {
+    "answer": "B",
+    "display": "(B) Inactivation of voltage-gated Na + channels"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "Reclassification needs a curriculum decision.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R023",
+     "studentId": "stu_b6e11fbb",
+     "source": "android",
+     "reportedAt": "2026-11-04T07:21:00Z",
+     "comment": "this is from neural control chapter, why is it in living world",
+     "theme": "chapter"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "620e23cecc50543bc7db9186",
+   "questionId": "620e23cecc50543bc7db9186",
+   "subject": "Zoology",
+   "chapter": "Evolution",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "syllabus",
+   "route": "faculty_review",
+   "severity": "medium",
+   "confidence": 0.6,
+   "headline": "Reported as outside the syllabus",
+   "errorExplanation": "Independent solve: B (conf 0.97). Key: B. Student claims it is outside the syllabus; needs a curriculum call. Independent working: Determine the ancestral state by using an outgroup: examine a more distantly related snake to see if the forked tongue is present, which informs the likely character state of the common ancestor.",
+   "evidence": "Independent solve: B (conf 0.97). Key: B. Student claims it is outside the syllabus; needs a curriculum call.",
+   "current": {
+    "answer": "B",
+    "display": "(B) She locates a specimen of a more distantly related snake to see if it has a forked tongue"
+   },
+   "suggested": {
+    "answer": "B",
+    "display": "(B) She locates a specimen of a more distantly related snake to see if it has a forked tongue"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "Needs a curriculum decision.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R026",
+     "studentId": "stu_2ef6577a",
+     "source": "ios",
+     "reportedAt": "2026-11-04T04:59:00Z",
+     "comment": "out of syllabus for NEET",
+     "theme": "syllabus"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "617fa18efd53ff1629ed890f",
+   "questionId": "617fa18efd53ff1629ed890f",
+   "subject": "Botany",
+   "chapter": "Morphology of Flowering Plants",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "exam_reference",
+   "route": "auto_apply",
+   "severity": "low",
+   "confidence": 0.95,
+   "headline": "Exam-name tag left in the question",
+   "errorExplanation": "Independent solve: D (conf 0.98). Key: D. Stem contains an exam-name source tag. Independent working: The leaf blade (lamina) is the flat, green, expanded part of a leaf that contains the network of veins and veinlets. Petiole is the stalk, node is a stem point, and stipule is a small appendage.",
+   "evidence": "Independent solve: D (conf 0.98). Key: D. Stem contains an exam-name source tag.",
+   "current": {
+    "answer": "D",
+    "display": "(D) Lamina"
+   },
+   "suggested": {
+    "answer": "D",
+    "display": "(D) Lamina"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "This repair touches authored content and needs a human edit.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R013",
+     "studentId": "stu_5163d58f",
+     "source": "android",
+     "reportedAt": "2026-11-06T16:04:00Z",
+     "comment": "why NEET 2019 written in question",
+     "theme": "exam_ref"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "61dffbec08489156b684bd22",
+   "questionId": "61dffbec08489156b684bd22",
+   "subject": "Zoology",
+   "chapter": "Structural Organisation in Animals",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "spelling",
+   "route": "auto_apply",
+   "severity": "low",
+   "confidence": 0.95,
+   "headline": "Spelling or grammar error",
+   "errorExplanation": "Independent solve: A (conf 0.98). Key: A. Spelling/grammar complaint; content otherwise correct. Independent working: The inner surface of the small intestine is lined by simple columnar epithelium (absorptive epithelium) with microvilli and goblet cells, which is epithelial tissue.",
+   "evidence": "Independent solve: A (conf 0.98). Key: A. Spelling/grammar complaint; content otherwise correct.",
+   "current": {
+    "answer": "A",
+    "display": "(A) Epithellial tisue"
+   },
+   "suggested": {
+    "answer": "A",
+    "display": "(A) Epithellial tisue"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "This repair touches authored content and needs a human edit.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R012",
+     "studentId": "stu_4cf384a8",
+     "source": "android",
+     "reportedAt": "2026-11-03T21:43:00Z",
+     "comment": "spelling mistake in option A",
+     "theme": "spelling"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "61ee6c9d90a1a968a168686b",
+   "questionId": "61ee6c9d90a1a968a168686b",
+   "subject": "Zoology",
+   "chapter": "Digestion and Absorption",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "spelling",
+   "route": "auto_apply",
+   "severity": "low",
+   "confidence": 0.95,
+   "headline": "Spelling or grammar error",
+   "errorExplanation": "Independent solve: B (conf 0.99). Key: B. Spelling/grammar complaint; content otherwise correct. Independent working: Lymphoid aggregates in the distal small intestine (ileum) are called Peyer's patches, not villi, rugae, or choroid plexus.",
+   "evidence": "Independent solve: B (conf 0.99). Key: B. Spelling/grammar complaint; content otherwise correct.",
+   "current": {
+    "answer": "B",
+    "display": "(B) Peyer’s patches"
+   },
+   "suggested": {
+    "answer": "B",
+    "display": "(B) Peyer’s patches"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "This repair touches authored content and needs a human edit.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R022",
+     "studentId": "stu_782ab3a2",
+     "source": "android",
+     "reportedAt": "2026-11-05T10:05:00Z",
+     "comment": "spelling of plexus wrong",
+     "theme": "spelling"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "63765a28f1d8416ae0408d89",
+   "questionId": "63765a28f1d8416ae0408d89",
+   "subject": "Physics",
+   "chapter": "Nuclear physics and radioactivity",
+   "questionType": "scq",
+   "verdict": "defect",
+   "repair": "markup_leak",
+   "route": "auto_apply",
+   "severity": "low",
+   "confidence": 0.95,
+   "headline": "Raw LaTeX visible in the question",
+   "errorExplanation": "Independent solve: C (conf 0.98). Key: C. Raw LaTeX is visible in the stem. Independent working: Use N = N0(1/2)^{t/60}. For 7/8 decayed, remaining fraction = 1/8. So (1/2)^{t/60}=1/8=(1/2)^3 ⇒ t/60=3 ⇒ t=180 days.",
+   "evidence": "Independent solve: C (conf 0.98). Key: C. Raw LaTeX is visible in the stem.",
+   "current": {
+    "answer": "C",
+    "display": "(C) 180 days"
+   },
+   "suggested": {
+    "answer": "C",
+    "display": "(C) 180 days"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "This repair touches authored content and needs a human edit.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R014",
+     "studentId": "stu_eee77910",
+     "source": "android",
+     "reportedAt": "2026-11-04T17:09:00Z",
+     "comment": "some code is showing \\frac in question",
+     "theme": "latex"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  },
+  {
+   "caseId": "5fc60508028950133eac8963",
+   "questionId": "5fc60508028950133eac8963",
+   "subject": "Physics",
+   "chapter": "Newton's law of motion",
+   "questionType": "integerQuestion",
+   "verdict": "defect",
+   "repair": "answer_form",
+   "route": "auto_apply",
+   "severity": "low",
+   "confidence": 0.8,
+   "headline": "Unit or answer form not stated",
+   "errorExplanation": "Independent solve: 20 (conf 0.96). Key: 20. Unit/answer form is not stated. Independent working: Normal reaction N=100 N; max static friction μN=0.3×100=30 N; weight mg=2×10=20 N; since weight<max friction, actual friction equals weight =20 N.",
+   "evidence": "Independent solve: 20 (conf 0.96). Key: 20. Unit/answer form is not stated.",
+   "current": {
+    "answer": "20",
+    "display": "20"
+   },
+   "suggested": {
+    "answer": "20",
+    "display": "20"
+   },
+   "diff": null,
+   "suggestedEdit": null,
+   "manualFixRequired": true,
+   "manualReason": "This repair touches authored content and needs a human edit.",
+   "missingOptions": [],
+   "blankOptions": [],
+   "reports": [
+    {
+     "reportId": "R024",
+     "studentId": "stu_679f9eed",
+     "source": "android",
+     "reportedAt": "2026-11-09T08:24:00Z",
+     "comment": "unit not mentioned in question",
+     "theme": "unit"
+    }
+   ],
+   "reportCount": 1,
+   "status": "pending_review",
+   "createdAt": "2026-11-11T11:20:51+00:00"
+  }
+ ]
+}

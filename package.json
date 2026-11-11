@@ -1,0 +1,16 @@
+{
+  "name": "acadza-report-fix",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Report-to-fix triage pipeline and faculty console (Node is only needed for the jsdom smoke tests; the app itself is Python/FastAPI).",
+  "scripts": {
+    "test:login": "node tests/login_smoke.mjs",
+    "test:console": "node tests/frontend_smoke.mjs && node tests/frontend_smoke2.mjs",
+    "test:sanity": "node tests/static_sanity.js",
+    "test:js": "node tests/login_smoke.mjs && node tests/frontend_smoke.mjs && node tests/frontend_smoke2.mjs && node tests/static_sanity.js",
+    "test:api": "python -m pytest tests/test_api.py -q"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
+}
