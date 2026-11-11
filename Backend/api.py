@@ -14,7 +14,7 @@ import sys
 import threading
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import BackgroundTasks, FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from starlette.requests import Request
@@ -182,7 +182,14 @@ def get_practice(request: Request) -> dict:
 
 
 @app.post("/api/queries")
-def submit_query(payload: QueryRequest, request: Request) -> dict:
+def submit_query(payload: QueryRequest, request: Request,
+                 background: BackgroundTasks) -> dict:
+    """Record the query and return at once; the AI check runs after the response.
+
+    The pipeline stages and the model-written reply take seconds to minutes, so
+    they are queued as a background task. The student sees `submitted` first and
+    gets the verdict (and the reply) on the next poll of `/api/queries/mine`.
+    """
     user = require_user(request)
     known = {q["questionId"] for q in practice_questions()}
     if payload.questionId not in known:
@@ -191,13 +198,9 @@ def submit_query(payload: QueryRequest, request: Request) -> dict:
     if len(comment) < 5:
         raise HTTPException(status_code=400, detail="Describe the issue in a few words.")
     record = demo_db.add_query(payload.questionId, user["username"], comment)
-    summary = run_pipeline_job()
-    counts = demo_db.query_counts()
-    mine = [q for q in demo_db.queries_by_student(record["studentId"])
-            if q["report_id"] == record["reportId"]]
-    status = mine[0]["status"] if mine else "submitted"
-    return {"ok": True, "reportId": record["reportId"], "status": status,
-            "pipeline": summary, "counts": counts}
+    background.add_task(run_pipeline_in_background)
+    return {"ok": True, "reportId": record["reportId"], "status": "submitted",
+            "pipeline": {"queued": True}, "counts": demo_db.query_counts()}
 
 
 @app.get("/api/queries/mine")
@@ -207,6 +210,20 @@ def my_queries(request: Request) -> dict:
 
 
 # ---- pipeline --------------------------------------------------------------
+
+def run_pipeline_in_background() -> None:
+    """Background wrapper: never let a pipeline error escape into the server loop.
+
+    A failure leaves the query at `submitted`, so the next student poll or the
+    faculty pipeline button retries it. Nothing is silently marked resolved.
+    """
+    try:
+        run_pipeline_job()
+    except HTTPException as error:
+        print(f"background pipeline failed: {error.detail}")
+    except Exception as error:  # noqa: BLE001 - logged, not swallowed silently
+        print(f"background pipeline failed: {error}")
+
 
 def run_pipeline_job() -> dict:
     """Sync new queries into data/reports.json and run the offline stages.

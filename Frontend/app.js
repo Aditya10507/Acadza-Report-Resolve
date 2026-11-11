@@ -439,6 +439,9 @@ function renderDetail() {
         </div>
       </section>
 
+      <!-- ===== key vs AI solve ===== -->
+      ${compareCard(rep, q)}
+
       <!-- ===== evidence ===== -->
       <section class="card">
         <div class="card-head">
@@ -672,6 +675,100 @@ function diffCard(rep) {
         </div>` : ""}
     </div>
   </section>`;
+}
+
+/* ---------------- answer key vs AI solve ---------------- */
+function compareCard(rep, q) {
+  // Only the case's own stored answer (currentDisplay) is comparable with the
+  // solve: keyDisplay reads the live sheet, which may already carry a fix.
+  const keyAns = rep.currentDisplay || rep.keyDisplay || "";
+  const solveAns = rep.suggestedDisplay || rep.solveDisplay || "";
+  if (rep.verdict !== "defect" || !keyAns || !solveAns) return "";
+
+  const norm = (v) => String(v).replace(/\s+/g, " ").trim();
+  const differs = norm(keyAns) !== norm(solveAns);
+  const [keyHtml, solveHtml] = differs ? tokenDiff(keyAns, solveAns) : [esc(keyAns), esc(solveAns)];
+  const conf = rep.solveConfidence ?? null;
+  const liveKey = rep.keyDisplay && norm(rep.keyDisplay) !== norm(keyAns) ? rep.keyDisplay : null;
+
+  return `
+  <section class="review-section cmp-section">
+    <details class="cmp" ${differs ? "open" : ""}>
+      <summary class="cmp-summary">
+        <h2>Answer key vs AI solve</h2>
+        <span class="chip ${differs ? "cmp-differs" : "cmp-agrees"}">
+          ${differs ? "different answers" : "AI agrees with the key"}
+        </span>
+        <span class="spacer"></span>
+        <span class="cmp-toggle">compare</span>
+      </summary>
+      <div class="cmp-body">
+        <div class="cmp-grid">
+          <div class="cmp-col key">
+            <div class="cmp-label">Answer key <span class="cmp-tag">as stored</span></div>
+            <div class="cmp-answer">${keyHtml}</div>
+            <div class="cmp-sub">supplied by the content sheet${q?.questionType === "nat" ? " · numeric answer" : ""}</div>
+          </div>
+          <div class="cmp-mid">vs</div>
+          <div class="cmp-col solve">
+            <div class="cmp-label">AI independent solve
+              ${conf !== null ? `<span class="cmp-tag">conf ${conf.toFixed(2)}</span>` : ""}</div>
+            <div class="cmp-answer">${solveHtml}</div>
+            <div class="cmp-sub">
+              ${rep.solveInsufficient
+                ? "solver reported insufficient information"
+                : "solved from the stem and options only"}
+            </div>
+          </div>
+        </div>
+        ${differs
+          ? `<p class="cmp-line"><b>Changed:</b> the highlighted words are the only difference between the two answers.</p>`
+          : `<p class="cmp-line">Both answers match — this case is about something other than the key (${esc(rep.repairLabel || rep.repair || "content repair")}).</p>`}
+        ${liveKey
+          ? `<p class="cmp-line muted">The live key now reads <b>${esc(liveKey)}</b> — this case was opened against <b>${esc(keyAns)}</b>.</p>`
+          : ""}
+        ${rep.solveWorking
+          ? `<details class="cmp-work"><summary>Show the AI's working</summary>
+               <div class="working-box">${esc(rep.solveWorking)}</div></details>`
+          : ""}
+        ${q?.solutionHtml
+          ? `<details class="cmp-work"><summary>Show the stored solution</summary>
+               <div class="rendered sol-render">${q.solutionHtml}</div></details>`
+          : `<p class="cmp-line muted">No stored solution for this question.</p>`}
+      </div>
+    </details>
+  </section>`;
+}
+
+/* Word-level diff of two short answers. Only tokens that differ are marked,
+   so the eye lands on C -> A and 130 -> 50 rather than re-reading both lines. */
+function tokenDiff(a, b) {
+  const A = String(a).split(/\s+/).filter(Boolean);
+  const B = String(b).split(/\s+/).filter(Boolean);
+  if (A.length > 40 || B.length > 40) return [esc(a), esc(b)];
+
+  const n = A.length, m = B.length;
+  const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = n - 1; i >= 0; i--) {
+    for (let j = m - 1; j >= 0; j--) {
+      dp[i][j] = A[i] === B[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    }
+  }
+  const changedA = new Array(n).fill(false);
+  const changedB = new Array(m).fill(false);
+  let i = 0, j = 0;
+  while (i < n && j < m) {
+    if (A[i] === B[j]) { i++; j++; }
+    else if (dp[i + 1][j] >= dp[i][j + 1]) changedA[i++] = true;
+    else changedB[j++] = true;
+  }
+  while (i < n) changedA[i++] = true;
+  while (j < m) changedB[j++] = true;
+
+  const render = (tokens, flags) => tokens
+    .map((t, k) => (flags[k] ? `<mark class="cmp-hl">${esc(t)}</mark>` : esc(t)))
+    .join(" ");
+  return [render(A, changedA), render(B, changedB)];
 }
 
 function highlightStudent(comment) {
@@ -1128,6 +1225,7 @@ function renderDetail() {
           <p>${esc(rep.errorExplanation || rep.evidence)}</p>
         </details>` : ""}
       </section>
+      ${compareCard(rep, question)}
       ${diffCard(rep)}
       <details class="question-preview">
         <summary>View question and solution</summary>

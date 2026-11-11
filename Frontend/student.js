@@ -277,12 +277,7 @@ async function sendReport() {
     const data = await res.json();
     if (!res.ok) throw new Error(data.detail || "Could not send the query.");
     closeDialog($("#reportDialog"));
-    const statusText = data.status === "sent_to_faculty"
-      ? "The AI flagged it — it is now in the faculty queue."
-      : data.status === "closed_by_ai"
-        ? "The AI checked it and did not flag it as an issue."
-        : "The AI is checking it now.";
-    toast(`Query ${data.reportId} sent. ${statusText}`, "ok");
+    toast(`Query ${data.reportId} sent. The AI is checking it — the verdict appears here once it is done.`, "ok");
     loadMyQueries();
   } catch (err) {
     toast(err.message, "err");
@@ -302,7 +297,17 @@ async function loadMyQueries() {
     badge.hidden = !state.queries.length;
     badge.textContent = state.queries.length;
     renderQueries();
+    schedulePoll();
   } catch { /* badge is best-effort */ }
+}
+
+/* The AI check runs after the submit response, so poll while anything is still
+   being checked. Polling stops by itself once every query has a verdict. */
+let pollTimer = null;
+function schedulePoll() {
+  clearTimeout(pollTimer);
+  if (!state.queries.some((q) => q.status === "submitted")) return;
+  pollTimer = setTimeout(loadMyQueries, 3000);
 }
 
 function renderQueries() {
