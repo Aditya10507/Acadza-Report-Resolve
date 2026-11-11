@@ -1,0 +1,517 @@
+[
+  {
+    "reportId": "R001",
+    "questionId": "60f744b3f1b9bc7cc7b4a949",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "C",
+      "replace": "A"
+    },
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: A (conf 0.97). Key: C. The stored solution supports the independent solve, not the key.",
+    "student_reply": "Sorry – the answer key listed (C) 130 V by mistake; the correct supply voltage is 50 V (option A). We’ve updated the key accordingly. Thanks for pointing it out!"
+  },
+  {
+    "reportId": "R002",
+    "questionId": "60f744b3f1b9bc7cc7b4a949",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "C",
+      "replace": "A"
+    },
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: A (conf 0.97). Key: C. The stored solution supports the independent solve, not the key.",
+    "student_reply": "Sorry – the answer key listed (C) 130 V by mistake; the correct supply voltage is (A) 50 V. We’ve updated the key, thanks for catching it."
+  },
+  {
+    "reportId": "R003",
+    "questionId": "60f744b3f1b9bc7cc7b4a949",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "C",
+      "replace": "A"
+    },
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: A (conf 0.97). Key: C. The stored solution supports the independent solve, not the key.",
+    "student_reply": "Sorry – the answer key listed 130 V, but the correct supply voltage is 50 V as per the calculation. We’ve updated the key accordingly. Thank you for pointing this out."
+  },
+  {
+    "reportId": "R004",
+    "questionId": "68e870ef42c06737d6e565c4",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "A",
+      "replace": "D"
+    },
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: D (conf 0.99). Key: A. The stored solution supports the independent solve, not the key.",
+    "student_reply": "Sorry – answer key mein galti thi, correct answer (D) 4800 N/m² hai. Dhanyavaad aapka isko point out karne ke liye."
+  },
+  {
+    "reportId": "R005",
+    "questionId": "68dea616d0cda73d07e93ae6",
+    "verdict": "defect",
+    "repair": "answer_key",
+    "edit": {
+      "field": "answer",
+      "find": "2",
+      "replace": "1"
+    },
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: 1 (conf 0.96). Key: 2. The stored solution supports the independent solve, not the key.",
+    "student_reply": "Sorry – the answer key was incorrect; the correct option is 1. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R006",
+    "questionId": "696a866665252c04fc1f81c2",
+    "verdict": "defect",
+    "repair": "stem_data",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.8,
+    "evidence": "Independent solve: insufficient (conf 0.00). Key: 50. Solve reports insufficient information: a required value is missing from the stem.",
+    "student_reply": "Sorry – the question is missing the cube’s edge length, so the original volume isn’t provided and the contraction can’t be calculated. Our team is checking this issue."
+  },
+  {
+    "reportId": "R007",
+    "questionId": "60f742f6660d187cc13a8078",
+    "verdict": "defect",
+    "repair": "stem_data",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.8,
+    "evidence": "Independent solve: B (conf 0.85). Key: C. Student reports missing data and the solve had to assume a value (confidence 0.85).",
+    "student_reply": "Sorry – question mein inductance ki value missing thi, jiski wajah se answer key galat diya gaya tha. Hum isko theek kar rahe hain, dhanyavaad aapki report ke liye."
+  },
+  {
+    "reportId": "R008",
+    "questionId": "60f742f6660d187cc13a8078",
+    "verdict": "defect",
+    "repair": "stem_data",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.8,
+    "evidence": "Independent solve: B (conf 0.85). Key: C. Student reports missing data and the solve had to assume a value (confidence 0.85).",
+    "student_reply": "Our mistake – the answer key listed (C) 50 Ω while the correct impedance is (B) 40 Ω as explained. We are checking this and will update it. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R009",
+    "questionId": "622f08d7b70e4b50e4500a1b",
+    "verdict": "defect",
+    "repair": "option_repair",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.72,
+    "evidence": "Independent solve: C (conf 0.96). Key: C. Only 3 options stored; restoring a missing distractor is authored content.",
+    "student_reply": "Our mistake – option D was omitted from the list; we are adding it now. Thanks for pointing this out."
+  },
+  {
+    "reportId": "R010",
+    "questionId": "622f08d7b70e4b50e4500a1b",
+    "verdict": "defect",
+    "repair": "option_repair",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.72,
+    "evidence": "Independent solve: C (conf 0.96). Key: C. Only 3 options stored; restoring a missing distractor is authored content.",
+    "student_reply": "Our mistake – the question displayed only three choices; option D is missing and is being added."
+  },
+  {
+    "reportId": "R011",
+    "questionId": "68e872546e45ba37dcc16bc0",
+    "verdict": "defect",
+    "repair": "option_repair",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.85,
+    "evidence": "Independent solve: C (conf 0.96). Key: C. An option is blank in the stored record.",
+    "student_reply": "Our mistake – option C was missing, so you couldn’t see the correct answer (C). We are fixing the options now. Thanks for pointing it out!"
+  },
+  {
+    "reportId": "R012",
+    "questionId": "61dffbec08489156b684bd22",
+    "verdict": "defect",
+    "repair": "spelling",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: A (conf 0.98). Key: A. Spelling/grammar complaint; content otherwise correct.",
+    "student_reply": "Apologies – we spotted a spelling error in option A and are correcting it, thank you for letting us know."
+  },
+  {
+    "reportId": "R013",
+    "questionId": "617fa18efd53ff1629ed890f",
+    "verdict": "defect",
+    "repair": "exam_reference",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: D (conf 0.98). Key: D. Stem contains an exam-name source tag.",
+    "student_reply": "Our mistake – the exam tag (NEET 2019) was left in the question; we’re checking it and will remove it. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R014",
+    "questionId": "63765a28f1d8416ae0408d89",
+    "verdict": "defect",
+    "repair": "markup_leak",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: C (conf 0.98). Key: C. Raw LaTeX is visible in the stem.",
+    "student_reply": "Sorry – the LaTeX code showed up in the question text; we’re checking it and will fix the formatting. Thanks for pointing it out!"
+  },
+  {
+    "reportId": "R015",
+    "questionId": "6956d79788d7701e5617bc29",
+    "verdict": "defect",
+    "repair": "identical_options",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.9,
+    "evidence": "Independent solve: B (conf 0.97). Key: B. Two options have identical text.",
+    "student_reply": "Sorry – we noticed options B and C were duplicated. The correct answer is (B) 0 W and we are fixing the options now. Thanks for pointing this out!"
+  },
+  {
+    "reportId": "R016",
+    "questionId": "6263d75bdd44e265ef926d97",
+    "verdict": "defect",
+    "repair": "solution_fix",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.85,
+    "evidence": "Independent solve: 20 (conf 0.97). Key: 20. Solve agrees with the key, but the student reports the solution is wrong or from another question.",
+    "student_reply": "Sorry – we missed this; the solution mistakenly gave 40 cm, the correct side length is 20 cm and we are checking the fix. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R017",
+    "questionId": "6208e80a9cb2ab67dac61bd0",
+    "verdict": "already_fixed",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: C (conf 0.95). Key: C. errorHistory shows a faculty correction after the report date.",
+    "student_reply": "Sorry – we missed a spelling error in the options; the word ‘mere’ will be corrected, and the fix is being applied. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R018",
+    "questionId": "612151a6a34397610a9a2e58",
+    "verdict": "defect",
+    "repair": "solution_fix",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.85,
+    "evidence": "Independent solve: B (conf 0.97). Key: B. Solve agrees with the key, but the student reports the solution is wrong or from another question.",
+    "student_reply": "Sorry – the solution shown was for a different question; we’re checking it and will update the correct answer (B) 16.8 eV. Thanks for flagging this."
+  },
+  {
+    "reportId": "R019",
+    "questionId": "612151a6a34397610a9a2e58",
+    "verdict": "defect",
+    "repair": "solution_fix",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.85,
+    "evidence": "Independent solve: B (conf 0.97). Key: B. Solve agrees with the key, but the student reports the solution is wrong or from another question.",
+    "student_reply": "Sorry – solution mein galti thi, correct answer (B) 16.8 eV hai. Hum isko abhi check kar rahe hain, dhanyavaad aapka iski taraf dhyan dilane ke liye."
+  },
+  {
+    "reportId": "R020",
+    "questionId": "68c8153cfb6b2f16e2d3ceaf",
+    "verdict": "app_issue",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.85,
+    "evidence": "Independent solve: A,B,D (conf 0.97). Key: A, B, D. Complaint describes app behaviour.",
+    "student_reply": "Sorry – we see the answer key marked A, B, D but the app flagged it as incorrect; we’re checking the scoring logic now. Thanks for pointing this out."
+  },
+  {
+    "reportId": "R021",
+    "questionId": "68f21caf941cda588bc04365",
+    "verdict": "defect",
+    "repair": "type_mismatch",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.9,
+    "evidence": "Independent solve: B (conf 0.97). Key: B. Multiple-correct type but only one correct option stored.",
+    "student_reply": "Apologies – the answer was saved with the wrong type, so it showed up incorrectly; we are checking and will fix it. Thanks for flagging this."
+  },
+  {
+    "reportId": "R022",
+    "questionId": "61ee6c9d90a1a968a168686b",
+    "verdict": "defect",
+    "repair": "spelling",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.95,
+    "evidence": "Independent solve: B (conf 0.99). Key: B. Spelling/grammar complaint; content otherwise correct.",
+    "student_reply": "Apologies – the word ‘plexus’ was misspelled in the question. We are correcting it now and appreciate you pointing it out."
+  },
+  {
+    "reportId": "R023",
+    "questionId": "68ecbacb2ec87a18deba1ad7",
+    "verdict": "defect",
+    "repair": "wrong_chapter",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.85,
+    "evidence": "Independent solve: B (conf 0.98). Key: B. Student reports the chapter/subject is wrong.",
+    "student_reply": "Our mistake – the question was placed under Living World instead of Neural Control. We’re checking the chapter assignment and will correct it. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R024",
+    "questionId": "5fc60508028950133eac8963",
+    "verdict": "defect",
+    "repair": "answer_form",
+    "edit": null,
+    "route": "auto_apply",
+    "confidence": 0.8,
+    "evidence": "Independent solve: 20 (conf 0.96). Key: 20. Unit/answer form is not stated.",
+    "student_reply": "Our mistake – the unit for the answer wasn’t mentioned, it should be Newtons (N). We’re checking this and will update the question. Thanks for pointing it out!"
+  },
+  {
+    "reportId": "R025",
+    "questionId": "622df25ab70e4b50e44ff837",
+    "verdict": "defect",
+    "repair": "diagram",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.85,
+    "evidence": "Independent solve: B (conf 0.96). Key: B. Student reports a missing figure.",
+    "student_reply": "Our mistake – the diagram was omitted, so the setup isn’t clear. We are checking the content and will add the missing figure. Thanks for pointing this out."
+  },
+  {
+    "reportId": "R026",
+    "questionId": "620e23cecc50543bc7db9186",
+    "verdict": "defect",
+    "repair": "syllabus",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.6,
+    "evidence": "Independent solve: B (conf 0.97). Key: B. Student claims it is outside the syllabus; needs a curriculum call.",
+    "student_reply": "Sorry – this question isn’t covered in the NEET syllabus and we’re checking it with the curriculum team. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R027",
+    "questionId": "6062ec84518e9535e120c422",
+    "verdict": "not_actionable",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: A (conf 0.96). Key: A. Comment is not a content report (garbage or instruction-like); treated as data and ignored.",
+    "student_reply": "Could you let us know which part of the question or its options seems off to you? We’ll look into it right away."
+  },
+  {
+    "reportId": "R028",
+    "questionId": "6956d7bb23cb221e570d6013",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: B (conf 0.97). Key: B. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "It looks like the trigonometric step was missed – equating range and height gives tanθ = 4, not 2. So the correct answer is θ = tan⁻¹ 4 (option B)."
+  },
+  {
+    "reportId": "R029",
+    "questionId": "68e8734442c06737d6e56da4",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: A (conf 0.97). Key: A. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "It looks like the slip was in the final calculation – solving the equations gives μ = 0.8, not 0.4. Double‑checking the substitution step will show the correct value."
+  },
+  {
+    "reportId": "R030",
+    "questionId": "6956d7e988d7701e5617bd3e",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: D (conf 0.97). Key: D. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "You’re on the right track, but the amplitude works out to 8√2 m, not 4√2 m. You missed the factor of 2 when solving A·(π/8)·(√2/2)=π. That gives A=8√2 m."
+  },
+  {
+    "reportId": "R031",
+    "questionId": "68dea619d0cda73d07e93aee",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: 4 (conf 0.97). Key: 4. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "Aapka approach sahi tha, lekin aapne answer 2 likh diya. Calculation se pata chalta hai ki pehli alignment t=4 s hoti hai, isliye sahi option 4 hai."
+  },
+  {
+    "reportId": "R032",
+    "questionId": "68dea7c2387eea3d0d95f9bb",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: 8 (conf 0.96). Key: 8. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "Aapka approach sahi tha, bas answer ki unit mein slip ho gayi – central maxima ka shift 8 cm hai, 0.08 cm nahi."
+  },
+  {
+    "reportId": "R033",
+    "questionId": "68dea715387eea3d0d95f790",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: 3113 (conf 0.97). Key: 3113. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "You calculated the surface area correctly as 311.299 m², but the answer is rounded to four significant figures, giving 311.3, and 10 × 311.3 = 3113. The small difference is just rounding, not an error in the key."
+  },
+  {
+    "reportId": "R034",
+    "questionId": "695ee00b88d7701e561aabc5",
+    "verdict": "defect",
+    "repair": "unsound",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.85,
+    "evidence": "Independent solve: insufficient (conf 0.96). Key: D. The solve finds no correct printed option; the item has no valid answer as written.",
+    "student_reply": "Our mistake – the intensity formula was misapplied, so the options don’t match the correct reasoning. We are checking this and will update it. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R035",
+    "questionId": "66fe9dbe22132e5a70a3e579",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: D (conf 0.97). Key: D. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "You’re on the right track noticing antagonism, but relaxin and inhibin don’t oppose each other—they act on different pathways, so option D is correct."
+  },
+  {
+    "reportId": "R036",
+    "questionId": "60ca4feb6420652745f55522",
+    "verdict": "display_issue",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.85,
+    "evidence": "Independent solve: C (conf 0.97). Key: C. Complaint describes rendering/load.",
+    "student_reply": "Sorry – the options didn’t display fully on your phone. We’re checking the rendering issue so all choices appear correctly. Thanks for letting us know!"
+  },
+  {
+    "reportId": "R037",
+    "questionId": "68c9ae5afb6b2f16e2d43b1c",
+    "verdict": "display_issue",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.85,
+    "evidence": "Independent solve: D (conf 0.97). Key: D. Complaint describes rendering/load.",
+    "student_reply": "We’re sorry – the question is taking too long to load and we’re checking the rendering issue. Thanks for letting us know."
+  },
+  {
+    "reportId": "R038",
+    "questionId": "68f21df0941cda588bc0470b",
+    "verdict": "app_issue",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.85,
+    "evidence": "Independent solve: A (conf 0.97). Key: A. Complaint describes app behaviour.",
+    "student_reply": "Our mistake – the app recorded your answer as B instead of A; we’re checking the selection logic and will fix it. Thanks for letting us know."
+  },
+  {
+    "reportId": "R039",
+    "questionId": "68c801bc1b1dbc16dc93bf2b",
+    "verdict": "language_mode",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: A (conf 0.96). Key: A. Request for another language.",
+    "student_reply": "Maafi chaahte hain – aapki suvidha ke liye hum is question ka Hindi version banane par kaam kar rahe hain, abhi check ho raha hai. Dhanyavaad aapke feedback ke liye."
+  },
+  {
+    "reportId": "R040",
+    "questionId": "6264197209f4fd65f58f5707",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: C (conf 0.96). Key: C. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "Looks like you might have misread the question – the food that prevents vitamin‑A deficiency blindness is Golden rice, option C. Double‑checking the wording should clear it up."
+  },
+  {
+    "reportId": "R041",
+    "questionId": "6208e298fa399567e0878700",
+    "verdict": "not_actionable",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: A (conf 0.95). Key: A. Comment is not a content report (garbage or instruction-like); treated as data and ignored.",
+    "student_reply": "Could you let us know which part of the question seems off to you? Your details will help us review it accurately."
+  },
+  {
+    "reportId": "R042",
+    "questionId": "63c7cce12981ed154ee92c94",
+    "verdict": "defect",
+    "repair": "wrong_chapter",
+    "edit": null,
+    "route": "faculty_review",
+    "confidence": 0.85,
+    "evidence": "Independent solve: C (conf 0.97). Key: C. Student reports the chapter/subject is wrong.",
+    "student_reply": "Sorry – we placed this question in Geometrical optics by mistake; it belongs to Electrostatics. The chapter tag is being corrected. Thanks for pointing it out."
+  },
+  {
+    "reportId": "R043",
+    "questionId": "636283dbe3770c24f866e6d6",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: B (conf 0.96). Key: B. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "We see the mix‑up – the ratio asks for surface charge density of the bigger drop over the smaller one, which works out to 4 : 1, not 1 : 4. Your reasoning about area is right, just flip the order."
+  },
+  {
+    "reportId": "R044",
+    "questionId": "68dea577d0cda73d07e9391c",
+    "verdict": "no_error",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: 14 (conf 0.97). Key: 14. Independent solve matches the key; the student misread or mis-solved.",
+    "student_reply": "It looks like you read the potential at point P (22 V) as the answer, but the question asks for the difference V(P)−V(S), which is 22 V−8 V = 14 V. The key 14 V is correct."
+  },
+  {
+    "reportId": "R045",
+    "questionId": "6208e80a9cb2ab67dac61bd0",
+    "verdict": "already_fixed",
+    "repair": null,
+    "edit": null,
+    "route": "no_change",
+    "confidence": 0.9,
+    "evidence": "Independent solve: C (conf 0.95). Key: C. errorHistory shows a faculty correction after the report date.",
+    "student_reply": "Thanks for flagging this. Our faculty already corrected this question before your report reached the queue, so the version you see now has the right answer key and solution. Nothing further to fix - keep reporting anything that looks off."
+  }
+]
