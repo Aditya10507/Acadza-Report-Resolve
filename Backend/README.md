@@ -108,8 +108,9 @@ python Backend/Reply/student_reply.py
 ## Demo login, student panel and SQLite
 
 `Backend/demo_db.py` adds one small SQLite database (`data/demo.sqlite3`) on top of the
-JSON pipeline — it stores demo accounts, sessions and student queries only; every
-pipeline artifact stays in JSON.
+JSON pipeline — it stores demo accounts and student queries only; every pipeline
+artifact stays in JSON. Login sessions are signed cookies instead of rows, so a
+host that resets its filesystem on deploy does not log users out mid-visit.
 
 - `python run.py` seeds two demo accounts automatically:
   `student / student123` and `faculty / faculty123`. Signup (any role) is at `/login.html`.

@@ -111,7 +111,7 @@ def signup(credentials: Credentials) -> dict:
                                    credentials.role)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
-    token, _ = demo_db.create_session(user["id"])
+    token, _ = demo_db.create_session(user)
     response = JSONResponse({"username": user["username"], "role": user["role"]})
     return set_session_cookie(response, token)
 
@@ -121,14 +121,14 @@ def login(credentials: Credentials) -> dict:
     user = demo_db.verify_login(credentials.username, credentials.password)
     if not user:
         raise HTTPException(status_code=401, detail="Wrong username or password.")
-    token, _ = demo_db.create_session(user["id"])
+    token, _ = demo_db.create_session(user)
     response = JSONResponse({"username": user["username"], "role": user["role"]})
     return set_session_cookie(response, token)
 
 
 @app.post("/api/auth/logout")
 def logout(request: Request) -> dict:
-    demo_db.delete_session(request.cookies.get(SESSION_COOKIE))
+    # Sessions are stateless signed cookies, so clearing the cookie is the logout.
     response = JSONResponse({"ok": True})
     response.delete_cookie(SESSION_COOKIE)
     return response

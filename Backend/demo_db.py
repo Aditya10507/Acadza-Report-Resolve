@@ -4,7 +4,6 @@ One small database (data/demo.sqlite3) holds everything the demo adds on top
 of the JSON pipeline:
 
   users     - student / faculty accounts (signup + seeded demo accounts)
-  sessions  - cookie tokens for the demo login
   queries   - questions a student reported from the practice panel; these are
               synced into data/reports.json (reportId/questionId/comment/...)
               so the existing pipeline picks them up unchanged.
@@ -14,8 +13,11 @@ records demo state.
 """
 from __future__ import annotations
 
+import base64
 import hashlib
+import hmac
 import json
+import os
 import re
 import secrets
 import sqlite3
@@ -48,12 +50,6 @@ def init_db() -> None:
                 salt          TEXT NOT NULL,
                 role          TEXT NOT NULL CHECK (role IN ('student','faculty')),
                 created_at    TEXT NOT NULL
-            );
-            CREATE TABLE IF NOT EXISTS sessions (
-                token      TEXT PRIMARY KEY,
-                user_id    INTEGER NOT NULL REFERENCES users(id),
-                created_at TEXT NOT NULL,
-                expires_at TEXT NOT NULL
             );
             CREATE TABLE IF NOT EXISTS queries (
                 id          INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -134,34 +130,50 @@ def verify_login(username: str, password: str) -> dict | None:
 
 
 # ---- sessions --------------------------------------------------------------
+#
+# The token is a signed cookie, not a database row. Hosting rewrites the
+# filesystem on every deploy/restart, so a row-based session disappeared
+# mid-visit and the next action returned 401 "Login required". The HMAC
+# signature keeps the token unforgeable and needs no disk state, so a restart
+# no longer ends anyone's session.
 
-def create_session(user_id: int) -> tuple[str, str]:
-    token = secrets.token_hex(16)
-    now = datetime.now(timezone.utc)
-    with connect() as conn:
-        conn.execute(
-            "INSERT INTO sessions (token, user_id, created_at, expires_at) VALUES (?, ?, ?, ?)",
-            (token, user_id, now.isoformat(),
-             (now + timedelta(days=SESSION_DAYS)).isoformat()))
-    return token, (now + timedelta(days=SESSION_DAYS)).isoformat()
+SESSION_SECRET = (os.environ.get("ACADZA_SESSION_SECRET")
+                  or "acadza-demo-session-key").encode("utf-8")
+
+
+def _sign(payload: str) -> str:
+    return hmac.new(SESSION_SECRET, payload.encode("utf-8"),
+                    hashlib.sha256).hexdigest()
+
+
+def create_session(user: dict) -> tuple[str, str]:
+    expires_at = (datetime.now(timezone.utc)
+                  + timedelta(days=SESSION_DAYS)).isoformat()
+    claims = {"id": user["id"], "username": user["username"],
+              "role": user["role"], "exp": expires_at}
+    payload = base64.urlsafe_b64encode(
+        json.dumps(claims, separators=(",", ":")).encode("utf-8")
+    ).decode("ascii").rstrip("=")
+    return f"{payload}.{_sign(payload)}", expires_at
 
 
 def session_user(token: str | None) -> dict | None:
-    if not token:
+    if not token or "." not in token:
         return None
-    with connect() as conn:
-        row = conn.execute(
-            "SELECT u.id, u.username, u.role, s.expires_at FROM sessions s "
-            "JOIN users u ON u.id = s.user_id WHERE s.token = ?", (token,)).fetchone()
-    if not row or row["expires_at"] < datetime.now(timezone.utc).isoformat():
+    payload, _, signature = token.rpartition(".")
+    if not hmac.compare_digest(_sign(payload), signature):
         return None
-    return {"id": row["id"], "username": row["username"], "role": row["role"]}
-
-
-def delete_session(token: str | None) -> None:
-    if token:
-        with connect() as conn:
-            conn.execute("DELETE FROM sessions WHERE token = ?", (token,))
+    try:
+        claims = json.loads(base64.urlsafe_b64decode(
+            payload + "=" * (-len(payload) % 4)).decode("utf-8"))
+    except (ValueError, UnicodeDecodeError):
+        return None
+    if not isinstance(claims, dict) or not claims.get("username"):
+        return None
+    if str(claims.get("exp", "")) < datetime.now(timezone.utc).isoformat():
+        return None
+    return {"id": claims.get("id"), "username": claims["username"],
+            "role": claims.get("role")}
 
 
 # ---- student queries -------------------------------------------------------
