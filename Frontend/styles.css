@@ -430,6 +430,16 @@ a { color: var(--info); }
   font-size: 1em; margin: 0; font-weight: inherit; display: inline;
 }
 .q-render .rendered h3 { display: block; margin: .2em 0; }
+
+/* Stored question HTML was authored on a white background and carries its own
+   dark inline colours (color:#000000), which vanish on the dark theme. Every
+   surface that renders stored HTML must force theme colours instead - not just
+   .q-render, which the faculty review view and other panels do not use. */
+.rendered,
+.rendered :where(*) {
+  color: var(--text) !important;
+  background: none !important;
+}
 .q-toggle {
   display: inline-flex; gap: 5px; align-items: center;
   font-size: 11px; color: var(--muted);
